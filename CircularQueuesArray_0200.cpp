@@ -66,7 +66,15 @@ public:
         
         if (FRONT <= REAR) {
             while (FRONT <= REAR) {
+                cout << queue_array[FRONT] << "   ";
+                FRONT++;
+            }
 
+            FRONT = 0;
+
+            while (FRONT <= REAR) {
+                cout << queue_array[FRONT] << "   ";
+                FRONT++;
             }
         }
     }
