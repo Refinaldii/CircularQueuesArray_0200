@@ -57,24 +57,28 @@ public:
    }
 
     void display() {
-        if (FRONT == -1) {
+
+        int FRONT_Position = FRONT;
+        int REAR_Position = REAR;
+
+        if (FRONT_Position == -1) {
             cout << "Queue is empty\n";
             return;
         }
 
         cout << "\nElements in the queue are...\n";
         
-        if (FRONT <= REAR) {
-            while (FRONT <= REAR) {
-                cout << queue_array[FRONT] << "   ";
-                FRONT++;
+        if (FRONT_Position <= REAR_Position) {
+            while (FRONT_Position <= REAR) {
+                cout << queue_array[FRONT_Position] << "   ";
+                FRONT_Position++;
             }
 
-            FRONT = 0;
+            FRONT_Position = 0;
 
-            while (FRONT <= REAR) {
-                cout << queue_array[FRONT] << "   ";
-                FRONT++;
+            while (FRONT_Position <= REAR) {
+                cout << queue_array[FRONT_Position] << "   ";
+                FRONT_Position++;
             }
             cout << endl;
         }
@@ -118,9 +122,13 @@ int main()
                 cout << "Invalid option!!" << endl;
                 break;
             }
-                break;
             }
+            
+        }
+        catch (exception& e) {
+            cout << "Check for the values entered." << endl;
         }
     }
+    return 0;
 }
 
